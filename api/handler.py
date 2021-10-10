@@ -6,7 +6,7 @@ from flask             import Flask, request, Response
 from rossmann.Rossmann import Rossmann
 
 # loading model
-model = pickle.load(open('C:/Projetos/Portfolio/ROSSMANN STORE SALES/model/model_xgb_tuned.pkl', 'rb'))
+model = pickle.load(open('C:\Users\Usuario\Projetos\Rossmann-Store-Sales/model/model_xgb_tuned.pkl', 'rb'))
 
 # Initialize API
 app = Flask(__name__)
