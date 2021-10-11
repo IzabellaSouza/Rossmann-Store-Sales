@@ -10,7 +10,7 @@ import numpy  as np
 class Rossmann (object):
     def __init__(self):
         state = 1
-        self.home_path = 'C:\Users\Usuario\Projetos\Rossmann-Store-Sales/'
+        self.home_path = 'C:/Users/Usuario/Projetos/Rossmann-Store-Sales/'
         self.competition_distance_scaler   = pickle.load(open(self.home_path + 'parameter/competition_distance_scaler.pkl', 'rb'))
         self.competition_time_month_scaler = pickle.load(open(self.home_path + 'parameter/competition_time_month_scaler.pkl', 'rb'))
         self.promo_time_week_scaler        = pickle.load(open(self.home_path + 'parameter/promo_time_week_scaler.pkl', 'rb'))
@@ -52,14 +52,14 @@ class Rossmann (object):
             x['promo2_since_week']) else x['promo2_since_week'], axis=1)
 
         # promo2_since_year
-        df1['promo2_since_year'] = df1.apply(lambda x: x['date'].year if math.isnan(
+        dataset1['promo2_since_year'] = dataset1.apply(lambda x: x['date'].year if math.isnan(
             x['promo2_since_year']) else x['promo2_since_year'], axis=1)
 
         # promo_interval
         month_map = {1: 'Jan', 2: 'Feb', 3: 'Mar', 4: 'Apr', 5: 'May', 6: 'Jun',
                      7: 'Jul', 8: 'Aug', 9: 'Sep', 10: 'Oct', 11: 'Nov', 12: 'Dec'}
         dataset1['promo_interval'].fillna(0, inplace=True)
-        dataset1['month_map'] = df1['date'].dt.month.map(month_map)
+        dataset1['month_map'] = dataset1['date'].dt.month.map(month_map)
 
         # eh promocao quando a promo2 coincide com a date
         dataset1['is_promo'] = dataset1[['promo_interval', 'month_map']].apply(lambda x: 0 if x['promo_interval'] == 0 else 1 if x['month_map'] in x['promo_interval'].split(',') else 0, axis=1)
@@ -132,7 +132,7 @@ class Rossmann (object):
         dataset5['promo_time_week'] = self.promo_time_week_scaler.fit_transform(dataset5[['promo_time_week']].values)
 
         # year
-        dataset5['year'] = self.year_scaler.fit_transform(df5[['year']].values)
+        dataset5['year'] = self.year_scaler.fit_transform(dataset5[['year']].values)
 
         ## Encoding
 
