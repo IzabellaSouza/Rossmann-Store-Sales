@@ -3,7 +3,7 @@
 <br>
 
 ## CONTENTS
-- [Business](#busuness)
+- [Business](#business)
 - [Data](#data)
 - [Steps](#Steps)
 - [Progress](#Progress)
@@ -57,23 +57,35 @@ Most of the fields are self-explanatory. The following are descriptions for thos
 
 ## STEPS
 
- - [x] Data Description
- - [x] Feature Engineering
- - [x] Variable Filtering
- - [x] Exploratory Data Analysis (EDA)
- - [x] Data Preparation
- - [x] Feature Selection
- - [x] Machine Learning Modelling
- - [x] Hyperparameter Fine Tuning
- - [x] Interpretation of the Error
- - [x] Deploy Model
+- [x] **Data Description:** The goal is to use statistical metrics to identify outliers in the business scope and also analyze basic statistical metrics such as: mean, median, maximum, minimum, range, skew, curtosis and standard deviation.
+
+- [x] **Feature Engineering:** The goal of this step is to obtain new attributes based on the original variables, in order to better describe the phenomenon to be modeled.
+
+- [x] **Variable Filtering:** The goal of this step it to filter rows and delete columns that are not relevant for the model or are not part of the business scope.
+
+- [x] **Exploratory Data Analysis (EDA):** The goal of this step is to explore the data to find insights and better understand the impact of variables on model learning.
+
+- [x] **Data Preparation:** The goal of this step is to prepare the data prepare data for application of the machine learning model.
+
+- [x] **Feature Selection:** The goal of this step is to select the better attributes to train the model. It was used Boruta Algorithm to make the selection.
+
+- [x] **Machine Learning Modeling:** The goal of this step is to do the machine learning model training.
+
+- [x] **Hyperparameter Fine Tunning:** The goal of this step is to choose the best values for each of the parameters of the model selected in the previous step.
+
+- [x] **Convert model performance to business values:** The goal of this step is to convert model performance to a business result.
+
+- [x] **Deploy Model to Production:** The goal of this step is to publish the model in a cloud environment so that other people or services can use the results to improve the business decision. The cloud application platform choosed was Heroku.
+
+- [x] **Telegram Bot:** The goal of this step is to create a bot on the telegram app, that make possible to consult the forecast at any time.
+
 <br>
  
 ## PROGRESS
 
 ### Data Description
 - Understanding the business
-- CRISP-DS Steps
+- Method CRISP-DM
 - Rename columns for default
 - Data Dimensions
 - Checks data types
@@ -148,10 +160,12 @@ MAX_EVAL = 2
 
 ```
 
-### Interpretation of the Error
+### Convert model performance to business values
 
 
-### Deploy Model
+### Deploy Model to Production
+
+### Telegram Bot
 
 ##  TOOLS
 
@@ -166,5 +180,6 @@ MAX_EVAL = 2
 - Sklearn
 - Seaborn
 - IPython
+- Telegram
 - Inflection
 - Matplotlib
