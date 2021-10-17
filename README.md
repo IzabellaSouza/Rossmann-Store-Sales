@@ -7,7 +7,6 @@
 - [Data](#data)
 - [Steps](#Steps)
 - [Progress](#Progress)
-- [Conclusion](#Conclusion)
 - [Tools](#tools)
 - [Originator](#originator)
 <br>
@@ -173,7 +172,7 @@ MAX_EVAL = 2
 
 
 
-##  CONCLUSION
+###  CONCLUSION
 
 Considering the first CRISP-DM cycle, the final model presented a usefull performance, considering the MAPE (Mean Absolute Percentage Error) of 0.11. However, for some stores, higher MAPE values were observed, such as 0.37 and 0.52, but this is a point that could be improved in the next CRISP cycle.
 
