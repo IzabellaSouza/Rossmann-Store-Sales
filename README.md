@@ -57,6 +57,8 @@ Most of the fields are self-explanatory. The following are descriptions for thos
 
 ## STEPS
 
+The method used for the project was CRISP-DM, apply as the steps below:
+
 - [x] **Data Description:** The goal is to use statistical metrics to identify outliers in the business scope and also analyze basic statistical metrics such as: mean, median, maximum, minimum, range, skew, curtosis and standard deviation.
 
 - [x] **Feature Engineering:** The goal of this step is to obtain new attributes based on the original variables, in order to better describe the phenomenon to be modeled.
