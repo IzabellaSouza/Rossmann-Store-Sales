@@ -157,8 +157,8 @@ MAX_EVAL = 2
 
 - Flask
 - Scipy
-- Numpy
 - Pyenv
+- Numpy
 - Boruta
 - Pandas
 - Heroku
