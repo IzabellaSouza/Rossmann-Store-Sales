@@ -172,13 +172,13 @@ MAX_EVAL = 2
 
 
 
-###  CONCLUSION
+###  Conclusion
 
 Finally, it is possible to understand that although the model based on averages is simple, it is still coherent however not sensible enogh to comprehend store's oscilations, but if machine learn models were too expensive it would be a good choice to solve this problem, of course the data scientist and the CFO should consider its leak of precision in some points.
 
 The XGBoost Model for the first cycle (CRISP-DM Methodology) presented a result within the acceptable range, although some stores were difficult to have the expected behavior presenting the MAPE (Mean Absolute Percentage Error) between 0.30 to 0.56, this first result it will be presented to the company, to inform the project status and what is already available as a solution.
 
-###  NEXT STEPS
+###  Next Steps
 
 Start a second cycle to analyze the problem, seeking different approaches, especially considering stores with behavior that is difficult to predict. In these stores the Data scientist ought gain plenty of experience.
 
@@ -191,6 +191,8 @@ Possible points to be addressed in the second cycle:
 - Work with new features for forecasting
 
 - Work with a more robust method to find the best Hyper parameters for the model
+
+<br>
 
 ##  TOOLS
 
