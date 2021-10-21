@@ -164,10 +164,36 @@ MAX_EVAL = 2
 ```
 
 ### Convert model performance to business values
+```python
+## Business Performance
+# Sum of predictions
+dataset91 = dataset9[['store', 'predictions']].groupby( 'store' ).sum().reset_index()
+
+# MAE and MAPE
+dataset9_aux1 = dataset9[['store', 'sales', 'predictions']].groupby( 'store' ).apply( 
+lambda x: mean_absolute_error( x['sales'], x['predictions'] ) ).reset_index().rename( columns={0: 'MAE'} )
+dataset9_aux2 = dataset9[['store', 'sales', 'predictions']].groupby( 'store' ).apply( 
+lambda x: mean_absolute_percentage_error( x['sales'], x['predictions'] ) ).reset_index().rename( columns={0: 'MAPE'} )
+
+# Merge
+dataset9_aux3 = pd.merge( dataset9_aux1, dataset9_aux2, how='inner', on='store')
+dataset92 = pd.merge( dataset91 , dataset9_aux3, how='inner', on='store')
+
+# Scenarios
+dataset92['worst_scenario'] = dataset92['predictions'] - dataset92['MAE']
+dataset92['best_scenario'] = dataset92['predictions'] + dataset92['MAE']
+
+# Order Columns
+dataset92 = dataset92[[ 'store', 'predictions', 'worst_scenario', 'best_scenario', 'MAE', 'MAPE' ]]
+
+```
 
 
 ### Deploy Model to Production
 
+-  Saving trained model
+-  Building Rossmann Class
+-  Building API tester
 
 ### Telegram Bot
 
