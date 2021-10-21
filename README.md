@@ -192,6 +192,10 @@ dataset92 = dataset92[[ 'store', 'predictions', 'worst_scenario', 'best_scenario
   <img src="https://github.com/IzabellaSouza/Rossmann-Store-Sales/blob/main/img/Business_Performance.PNG">
 </p>
 
+<p align="center">
+<img src="https://github.com/IzabellaSouza/Rossmann-Store-Sales/blob/main/img/total_performance.PNG">
+</p>
+
 ```python
 ## Machine Learning Performance
 dataset9['error'] = dataset9['sales'] - dataset9['predictions']
