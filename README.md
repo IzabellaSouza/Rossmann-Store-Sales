@@ -164,6 +164,7 @@ MAX_EVAL = 2
 ```
 
 ### Convert model performance to business values
+
 ```python
 ## Business Performance
 # Sum of predictions
@@ -187,7 +188,32 @@ dataset92['best_scenario'] = dataset92['predictions'] + dataset92['MAE']
 dataset92 = dataset92[[ 'store', 'predictions', 'worst_scenario', 'best_scenario', 'MAE', 'MAPE' ]]
 
 ```
+<p align="center">
+  <img src="https://github.com/IzabellaSouza/Rossmann-Store-Sales/blob/main/img/Business_Performance.PNG">
+</p>
 
+```python
+## Machine Learning Performance
+dataset9['error'] = dataset9['sales'] - dataset9['predictions']
+dataset9['error_rate'] = dataset9['predictions'] / dataset9['sales']
+
+plt.figure(figsize=(18, 9))
+
+plt.subplot( 2, 2, 1 )
+sns.lineplot( x='date', y='sales', data=dataset9, label='SALES')
+sns.lineplot( x='date', y='predictions', data=dataset9, label='PREDICTIONS')
+
+plt.subplot( 2, 2, 2 )
+sns.lineplot( x='date', y='error_rate', data=dataset9 )
+plt.axhline( 1, linestyle='--' )
+
+plt.subplot( 2, 2, 3 )
+sns.distplot( dataset9['error'] )
+
+plt.subplot( 2, 2, 4 )
+sns.scatterplot( dataset9['predictions'], dataset9['error'] )
+```
+<img src="https://github.com/IzabellaSouza/Rossmann-Store-Sales/blob/main/img/Machine_Learning_Performance.PNG">
 
 ### Deploy Model to Production
 
